@@ -1,0 +1,20 @@
+{
+  "name": "4214",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "watch": "node build.js watch",
+    "build": "node build.js",
+    "start": "node dist/bundle.js"
+  },
+  "keywords": [],
+  "author": "xiao-e-yun",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@types/node": "^20.8.6",
+    "esbuild": "^0.19.4",
+    "pptxgenjs": "^3.12.0",
+    "puppeteer-core": "^21.3.8"
+  }
+}
