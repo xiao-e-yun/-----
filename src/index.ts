@@ -147,6 +147,15 @@ const headless = true
     async function createSlide(name: string) {
       let slide = pres.addSlide();
       const data = (await fs.readFile(`./data/${name}/` + (await fs.readdir(`./data/${name}`)).filter(v => v.endsWith(".csv"))[0], "utf-8")).replace(/^.*\n/, "").split("\n").map(v => v.split(",")) as [string, string][]
+      
+      slide.addImage({
+        x: 0,
+        y: 0,
+        w: `100%`,
+        h: `100%`,
+        path: `./data/${name}/screenshot.png`
+      })
+
       slide.addText(`在${projectName}專利中${name}如下;` + data.map(([name, items]) => `在${name}總共有${items}件`).join(";"), {
         valign: "top",
         align: "left",
@@ -154,6 +163,5 @@ const headless = true
         x: 0,
         y: 0,
       });
-      slide.background = { path: `./data/${name}/screenshot.png` };
     }
   })()
